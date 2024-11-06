@@ -8,7 +8,7 @@ O projeto está em aberto e em fase de aprimoramento. Os resultados iniciais ind
 ## Modelo Utilizado
 Para construir o modelo de classificação, foi utilizada a técnica de **Transfer Learning** com base em uma arquitetura pré-treinada, permitindo uma melhor performance mesmo com menos dados e menos tempo de treinamento. A arquitetura escolhida foi:
 
-- **Arquitetura Base**:  ResNet50 ()
+- **Arquitetura Base**:  ResNet50 ([model.pth](model.pth))
 - **Pesos Pré-Treinados**: [weights.pth](weights.pth)
 
 Os pesos do modelo foram ajustados para identificar espécies de plantas, adaptando as camadas finais para a classificação específica das classes do conjunto de dados.
