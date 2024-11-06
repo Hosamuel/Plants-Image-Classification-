@@ -4,6 +4,13 @@ Este projeto tem como objetivo criar um modelo de **classificação de imagens d
 
 ## Desenvolvimento do Projeto
 O projeto está em aberto e em fase de aprimoramento. Os resultados iniciais indicam uma evolução significativa a cada atualização realizada. Contudo, novas análises e otimizações serão necessárias para melhorar a **eficiência** do modelo.
+Todo o processo principal, incluindo o **tratamento dos dados**, o **pré-processamento** e o **treinamento do modelo**, foi realizado em um Jupyter Notebook, que está disponível para consulta e replicação. Esse caderno inclui:
+
+- Análise e organização do conjunto de dados
+- Implementação do modelo de Transfer Learning
+- Ajustes de hiperparâmetros e avaliação de desempenho
+
+O notebook completo está em [main.ipynb](main.ipynb).
 
 ## Modelo Utilizado
 Para construir o modelo de classificação, foi utilizada a técnica de **Transfer Learning** com base em uma arquitetura pré-treinada, permitindo uma melhor performance mesmo com menos dados e menos tempo de treinamento. A arquitetura escolhida foi:
