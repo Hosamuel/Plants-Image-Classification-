@@ -4,6 +4,11 @@ Este projeto tem como objetivo criar um modelo de **classificação de imagens d
 
 ## Desenvolvimento do Projeto
 O projeto está em aberto e em fase de aprimoramento. Os resultados iniciais indicam uma evolução significativa a cada atualização realizada. Contudo, novas análises e otimizações serão necessárias para melhorar a **eficiência** do modelo.
+Todo o processo principal, incluindo o **tratamento dos dados**, o **pré-processamento** e o **treinamento do modelo**, foi realizado em um Jupyter Notebook, que está em [main.ipynb](main.ipynb). Esse caderno inclui:
+
+- Análise e organização do conjunto de dados
+- Implementação do modelo de Transfer Learning
+- Ajustes de hiperparâmetros e avaliação de desempenho
 
 ## Modelo Utilizado
 Para construir o modelo de classificação, foi utilizada a técnica de **Transfer Learning** com base em uma arquitetura pré-treinada, permitindo uma melhor performance mesmo com menos dados e menos tempo de treinamento. A arquitetura escolhida foi:
@@ -21,3 +26,8 @@ O conjunto de dados é composto por milhares de imagens de plantas, organizadas 
 - **Teste**: Imagens para avaliação final do desempenho do modelo.
 
 Para fins de demonstração, uma pequena amostra do dataset foi incluida, com algumas categorias e uma quantidade limitada de imagens, organizadas nas mesmas subpastas de treino, validação e teste.
+
+## Informações das Plantas
+O arquivo JSON com as informações das espécies de plantas está disponível para referência e consulta. Ele contém os nomes científicos e os identificadores utilizados no modelo.
+
+- [Nomes das Plantas - plant_names.json](new_names.json)
