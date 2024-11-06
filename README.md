@@ -35,4 +35,7 @@ O arquivo JSON com as informações das espécies de plantas está disponível p
 ## Referêcia
 
 O conjunto de dados ultizados nesse projeto é o Pl@ntNet-300K e pode ser acessado no repositório Zenodo.
-**Referência**: Garcin, C., Joly, A., Bonnet, P., Servajean, M., & Salmon, J. (2021). Pl@ntNet-300K image dataset (1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4726653.
+
+**Referência**: Garcin, C., Joly, A., Bonnet, P., Servajean, M., & Salmon, J. (2021). 
+Pl@ntNet-300K image dataset (1.0) [Data set]. Zenodo. 
+https://doi.org/10.5281/zenodo.4726653.
