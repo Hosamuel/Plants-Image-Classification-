@@ -21,3 +21,8 @@ O conjunto de dados é composto por milhares de imagens de plantas, organizadas 
 - **Teste**: Imagens para avaliação final do desempenho do modelo.
 
 Para fins de demonstração, uma pequena amostra do dataset foi incluida, com algumas categorias e uma quantidade limitada de imagens, organizadas nas mesmas subpastas de treino, validação e teste.
+
+## Informações das Plantas
+O arquivo JSON com as informações das espécies de plantas está disponível para referência e consulta. Ele contém os nomes científicos e os identificadores utilizados no modelo. Você pode baixá-lo aqui:
+
+- [Nomes das Plantas - plant_names.json](link_para_o_json)
