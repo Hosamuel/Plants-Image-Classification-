@@ -25,7 +25,7 @@ O conjunto de dados é composto por milhares de imagens de plantas, organizadas 
 - **Validação**: Imagens para ajuste de hiperparâmetros e prevenção de overfitting.
 - **Teste**: Imagens para avaliação final do desempenho do modelo.
 
-Para fins de demonstração, uma pequena amostra do dataset foi incluida, com algumas categorias e uma quantidade limitada de imagens, organizadas nas mesmas subpastas de treino, validação e teste.
+Para fins de demonstração, uma pequena amostra do dataset foi incluida, com algumas categorias e uma quantidade limitada de imagens, organizadas nas mesmas subpastas de treino, validação e teste em [dataset_sample](dataset_sample)
 
 ## Informações das Plantas
 O arquivo JSON com as informações das espécies de plantas está disponível para referência e consulta. Ele contém os nomes científicos e os identificadores utilizados no modelo.
