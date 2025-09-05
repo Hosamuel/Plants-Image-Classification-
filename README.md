@@ -24,7 +24,8 @@ A distribuição das imagens pode ser verificada na figura abaixo, sendo a quant
 ## Informações das Plantas
 O arquivo JSON com as informações das espécies de plantas está disponível para referência e consulta. Ele contém os nomes científicos e os identificadores utilizados no modelo.
 
-- [Nomes das Plantas - plant_names.json](https://github.com/Hosamuel/Plants-Image-Classification-/blob/main/new_names.json)).
+- [Nomes das Plantas - plant_names.json](https://github.com/Hosamuel/Plants-Image-Classification-/blob/main/new_names.json).
+  
 ## Desenvolvimento do Projeto
 
 O software do projeto pode ser testado em [classifique-render](https://github.com/Hosamuel/classifique-render), onde se encontra disponível de forma pública. O sistema foi desenvolvido em **Flask**, um framework web simples e flexível, que permite ao usuário utilizar a aplicação de maneira intuitiva.  
