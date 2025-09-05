@@ -19,7 +19,7 @@ O conjunto de dados utilizado neste trabalho é composto por milhares de imagens
 Os dados foram obtidos a partir de plataformas amplamente reconhecidas, como o **Zenodo** e a **API da GBIF** (Global Biodiversity Information Facility). Após um extenso processo de tratamento, balanceamento e Data Augmentation, foi gerado um novo dataset consolidado para o desenvolvimento deste trabalho, disponível para consulta no seguinte link: [Google Drive](https://drive.google.com/file/d/10p8soon1274GFD5O5IhWtsNmaaHc8bhY/view?usp=sharing).  
 
 A distribuição das imagens pode ser verificada na figura abaixo, sendo a quantidade mínima de imagens por classe 402. Esse balanceamento foi fundamental para reduzir o impacto de classes sub-representadas e melhorar a robustez do modelo.
-<img width="776" height="447" alt="image" src="https://github.com/user-attachments/assets/4fabeb97-b083-4e41-9254-389b9c6a594e" />
+<p align= "center" <img width="776" height="447" alt="image" src="https://github.com/user-attachments/assets/4fabeb97-b083-4e41-9254-389b9c6a594e" /> </p>
 
 ## Informações das Plantas
 O arquivo JSON com as informações das espécies de plantas está disponível para referência e consulta. Ele contém os nomes científicos e os identificadores utilizados no modelo.
@@ -45,7 +45,7 @@ A aplicação, denominada **Deep Flora**, foi estruturada de forma modular, com 
 
 O sistema foi projetado para ser facilmente expandido, tanto em termos de modelos preditivos quanto na estrutura de dados e no visual da interface, reforçando seu potencial de aplicação em pesquisa, ensino e extensão.  
 
-Para executar o software localmente, é necessário instalar as bibliotecas utilizadas no desenvolvimento. Recomendo criar um **ambiente virtual** antes da instalação.  
+Para executar o software localmente, é necessário instalar as bibliotecas utilizadas no desenvolvimento. Recomendo criar um ambiente virtual antes da instalação.  
 No Windows, por exemplo, utilize:  
 `bash
 venv\Scripts\activate`
@@ -55,7 +55,7 @@ venv\Scripts\activate`
 Para construir o modelo de classificação, foi utilizada a técnica de **Transfer Learning** com base em arquiteturas pré-treinadas, o que possibilitou alcançar melhor performance mesmo com menos dados e menor tempo de treinamento. As arquiteturas selecionadas para essa tarefa foram ResNet-50, EfficientNet-B2, DenseNet-121 e MobileNetV2.  
 
 Ao término de cada treinamento, foram registrados o tempo gasto e o tamanho final do modelo, conforme ilustrado na tabela abaixo:  
-<img width="668" height="207" alt="image" src="https://github.com/user-attachments/assets/7ebeac74-9f33-43dc-a9ad-41324aef15aa" />
+<p align= "center" <img width="668" height="207" alt="image" src="https://github.com/user-attachments/assets/7ebeac74-9f33-43dc-a9ad-41324aef15aa" /> </p>
 
 A ResNet-50, embora tenha alcançado as melhores métricas globais, resultou em um arquivo consideravelmente maior (93,7 MB), o que pode representar um desafio em cenários com restrição de armazenamento. Em contrapartida, a DenseNet-121 gerou um modelo de 29 MB, a EfficientNet-B2 de 33,2 MB e a MobileNetV2 de apenas 11,1 MB, sendo, portanto, a arquitetura mais compacta entre as avaliadas.  
 
@@ -74,7 +74,7 @@ Apesar dos resultados positivos na análise geral, uma inspeção detalhada das 
 Em contrapartida, determinadas espécies alcançaram elevado grau de acerto. Entre os destaques, *Adiantum raddianum* obteve recall de **0,96** e F1-score de **0,94**, enquanto *Agave parryi* e *Alliaria petiolata* superaram valores de **0,93** em F1-score. Resultados igualmente expressivos foram observados em espécies como *Arundina graminifolia* e *Anthurium andraeanum*, ambas com métricas acima de **0,90**, evidenciando a eficácia do modelo em classes com padrões morfológicos mais característicos e melhor representados no conjunto de dados.  
 
 Como o número de classes é relativamente grande, a matriz de confusão completa mostrou-se inviável para visualização e interpretação neste trabalho. Por essa razão, optou-se por apresentar uma versão parcial, ilustrada abaixo, que evidencia os pares de espécies mais frequentemente confundidos pelo modelo.  
-<img width="824" height="526" alt="image" src="https://github.com/user-attachments/assets/3506be81-4df7-4dd4-9c45-26098585fb59" />
+<p align= "center" <img width="824" height="526" alt="image" src="https://github.com/user-attachments/assets/3506be81-4df7-4dd4-9c45-26098585fb59" /> </p>
 
 Os dados demonstram que os erros de classificação se concentram, em grande parte, em espécies pertencentes a **gêneros próximos** ou com **morfologia altamente similar**, como observado nas confusões entre *Lamium maculatum* e *Lamium purpureum*, ou entre *Papaver orientale* e *Papaver rhoeas*. Esses casos de confusão evidenciam não apenas a dificuldade inerente do problema de distinguir espécies semelhantes, mas também as limitações do próprio conjunto de dados em fornecer exemplos suficientemente distintos para cada classe.  
 
@@ -83,7 +83,7 @@ Parte desses erros pode estar relacionada à qualidade, variedade e padronizaç�
 ## Resultados
 
 A avaliação quantitativa dos modelos ResNet-50, EfficientNet-B2, DenseNet-121 e MobileNetV2 evidenciou desempenhos distintos na tarefa de classificação de espécies vegetais, conforme sintetizado na tabela abaixo.  
-<img width="601" height="152" alt="image" src="https://github.com/user-attachments/assets/f3c82890-13d3-4b82-93f3-1e89443be8ea" />
+<p align= "center" <img width="601" height="152" alt="image" src="https://github.com/user-attachments/assets/f3c82890-13d3-4b82-93f3-1e89443be8ea" /> </p>
 
 O modelo ResNet-50 destacou-se como a arquitetura de melhor desempenho, alcançando valores ponderados (*weighted average*) de precisão = 0,85, recall = 0,84 e F1-score = 0,84. A EfficientNet-B2 apresentou métricas globais próximas, com precisão = 0,81, recall = 0,80 e F1-score = 0,80, confirmando sua competitividade, embora com leve perda em relação à ResNet-50.  
 
@@ -98,7 +98,7 @@ A figura abaixo ilustra as principais etapas de utilização da aplicação:
 - apresentação da classificação sugerida pelo modelo e dos resultados probabilísticos;  
 - disponibilização de links externos para aprofundamento do conhecimento sobre a espécie reconhecida (descrições botânicas, imagens complementares e mapas de distribuição geográfica).  
 
-<img width="852" height="342" alt="image" src="https://github.com/user-attachments/assets/ad7ab691-e759-487a-9d00-b9fd36583001" />
+<p align= "center" <img width="852" height="342" alt="image" src="https://github.com/user-attachments/assets/ad7ab691-e759-487a-9d00-b9fd36583001" /> </p>
 
 ### Potencial de aplicação
 
