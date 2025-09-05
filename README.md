@@ -21,20 +21,35 @@ A aplicação, denominada **Deep Flora**, foi estruturada de forma modular, com 
 
 O sistema foi projetado para ser facilmente expandido, tanto em termos de modelos preditivos quanto na estrutura de dados e no visual da interface, reforçando seu potencial de aplicação em pesquisa, ensino e extensão.  
 
-Para executar o software localmente, é necessário instalar as bibliotecas utilizadas no desenvolvimento. Recomenda-se criar um **ambiente virtual** antes da instalação.  
+Para executar o software localmente, é necessário instalar as bibliotecas utilizadas no desenvolvimento. Recomendo criar um **ambiente virtual** antes da instalação.  
 No Windows, por exemplo, utilize:  
-```bash
+`bash
 venv\Scripts\activate
-python run.py
-
+python run.py`
 
 ## Modelo Utilizado
-Para construir o modelo de classificação, foi utilizada a técnica de **Transfer Learning** com base em uma arquitetura pré-treinada, permitindo uma melhor performance mesmo com menos dados e menos tempo de treinamento. A arquitetura escolhida foi:
+Para construir o modelo de classificação, foi utilizada a técnica de **Transfer Learning** com base em arquiteturas pré-treinadas, o que possibilitou alcançar melhor performance mesmo com menos dados e menor tempo de treinamento. As arquiteturas selecionadas para essa tarefa foram ResNet-50, EfficientNet-B2, DenseNet-121 e MobileNetV2.  
 
-- **Arquitetura Base**:  ResNet50 e o modelo gerado foi: [model.pth](model.pth).
-- **Pesos Pré-Treinados**: [weights.pth](weights.pth).
+Ao término de cada treinamento, foram registrados o tempo gasto e o tamanho final do modelo, conforme ilustrado na tabela abaixo:  
+<img width="668" height="207" alt="image" src="https://github.com/user-attachments/assets/7ebeac74-9f33-43dc-a9ad-41324aef15aa" />
 
-Os pesos do modelo foram ajustados para identificar espécies de plantas, adaptando as camadas finais para a classificação específica das classes do conjunto de dados.
+A ResNet-50, embora tenha alcançado as melhores métricas globais, resultou em um arquivo consideravelmente maior (93,7 MB), o que pode representar um desafio em cenários com restrição de armazenamento. Em contrapartida, a DenseNet-121 gerou um modelo de 29 MB, a EfficientNet-B2 de 33,2 MB e a MobileNetV2 de apenas 11,1 MB, sendo, portanto, a arquitetura mais compacta entre as avaliadas.  
+
+Essa diferença evidencia um equilíbrio importante entre desempenho e eficiência: modelos mais leves, como o MobileNetV2, apresentam menor custo computacional e maior aplicabilidade em dispositivos com baixa capacidade; já modelos mais robustos, como a ResNet-50, oferecem maior acurácia e estabilidade em cenários complexos.  
+
+Esses resultados confirmam o potencial das arquiteturas empregadas, que mantiveram elevado grau de acerto mesmo diante da diversidade morfológica e da complexidade taxonômica do conjunto de dados. A ResNet-50, no entanto, apresentou uma vantagem consistente sobre as demais, sendo selecionada como **modelo final** em função de sua superioridade nos indicadores globais.
+
+## Desempenho da Aplicação
+Apesar dos resultados positivos na análise geral, uma inspeção detalhada das métricas por classe revelou desafios importantes na classificação de espécies morfologicamente semelhantes ou com número reduzido de amostras. As dez classes com os piores desempenhos apresentaram valores de **recall inferiores a 0,40**, indicando dificuldade significativa na identificação automática dessas espécies. Esse resultado evidencia que tanto a escassez de imagens em determinadas classes quanto a elevada similaridade visual entre algumas espécies favoreceram o aumento de falsos negativos, reduzindo o desempenho nessas categorias específicas.  
+
+Em contrapartida, determinadas espécies alcançaram elevado grau de acerto. Entre os destaques, *Adiantum raddianum* obteve recall de **0,96** e F1-score de **0,94**, enquanto *Agave parryi* e *Alliaria petiolata* superaram valores de **0,93** em F1-score. Resultados igualmente expressivos foram observados em espécies como *Arundina graminifolia* e *Anthurium andraeanum*, ambas com métricas acima de **0,90**, evidenciando a eficácia do modelo em classes com padrões morfológicos mais característicos e melhor representados no conjunto de dados.  
+
+Como o número de classes é relativamente grande, a matriz de confusão completa mostrou-se inviável para visualização e interpretação neste trabalho. Por essa razão, optou-se por apresentar uma versão parcial, ilustrada abaixo, que evidencia os pares de espécies mais frequentemente confundidos pelo modelo.  
+<img width="824" height="526" alt="image" src="https://github.com/user-attachments/assets/3506be81-4df7-4dd4-9c45-26098585fb59" />
+
+Os dados demonstram que os erros de classificação se concentram, em grande parte, em espécies pertencentes a **gêneros próximos** ou com **morfologia altamente similar**, como observado nas confusões entre *Lamium maculatum* e *Lamium purpureum*, ou entre *Papaver orientale* e *Papaver rhoeas*. Esses casos de confusão evidenciam não apenas a dificuldade inerente do problema de distinguir espécies semelhantes, mas também as limitações do próprio conjunto de dados em fornecer exemplos suficientemente distintos para cada classe.  
+
+Parte desses erros pode estar relacionada à qualidade, variedade e padronização das imagens, além de fatores como iluminação, ângulo de captura e estágio fenológico dos espécimes fotografados.
 
 ## Dataset
 O conjunto de dados é composto por milhares de imagens de plantas, organizadas em três subconjuntos:
