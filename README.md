@@ -47,8 +47,8 @@ O sistema foi projetado para ser facilmente expandido, tanto em termos de modelo
 Para executar o software localmente, é necessário instalar as bibliotecas utilizadas no desenvolvimento. Recomendo criar um **ambiente virtual** antes da instalação.  
 No Windows, por exemplo, utilize:  
 `bash
-venv\Scripts\activate
-python run.py`
+venv\Scripts\activate`
+`python run.py`
 
 ## Modelo Utilizado
 Para construir o modelo de classificação, foi utilizada a técnica de **Transfer Learning** com base em arquiteturas pré-treinadas, o que possibilitou alcançar melhor performance mesmo com menos dados e menor tempo de treinamento. As arquiteturas selecionadas para essa tarefa foram ResNet-50, EfficientNet-B2, DenseNet-121 e MobileNetV2.  
