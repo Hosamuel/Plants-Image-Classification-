@@ -63,9 +63,9 @@ O sistema foi projetado para ser facilmente expandido, tanto em termos de modelo
 
 Para executar o software localmente, é necessário instalar as bibliotecas utilizadas no desenvolvimento. Recomendo criar um ambiente virtual antes da instalação.  
 No Windows, por exemplo, utilize:  
-```bash
-venv\Scripts\activate```
-```python run.py```
+`bash
+venv\Scripts\activate`
+`python run.py`
 
 ## Desempenho da Aplicação
 
