@@ -26,31 +26,6 @@ O arquivo JSON com as informações das espécies de plantas está disponível p
 
 - [Nomes das Plantas - plant_names.json](https://github.com/Hosamuel/Plants-Image-Classification-/blob/main/new_names.json).
   
-## Desenvolvimento do Projeto
-
-O software do projeto pode ser testado em [classifique-render](https://github.com/Hosamuel/classifique-render), onde se encontra disponível de forma pública. O sistema foi desenvolvido em **Flask**, um framework web simples e flexível, que permite ao usuário utilizar a aplicação de maneira intuitiva.  
-
-A interface possibilita carregar uma imagem de planta, realizar o processamento por meio dos modelos previamente treinados e receber como saída as principais informações da espécie reconhecida. A navegação foi organizada para proporcionar uma experiência fluida, desde o envio da imagem até a apresentação dos resultados.  
-
-A infraestrutura do projeto inclui:  
-- **Templates HTML** (uma página inicial e uma de resultados);  
-- **Folhas de estilo CSS** para definição visual;  
-- **Scripts auxiliares** para processamento e análise (em especial o `predict.py`);  
-- **Arquivo JSON (`new_names.json`)**, que associa a cada espécie um identificador único, nomes científicos e populares, além de links para materiais de referência como o Hortodidático da UFSC (HORTODIDÁTICO UFSC, s.d.), Reflora (REFLORA, s.d.) e o Biodiversity4all (BIODIVERSITY4ALL, s.d.).  
-
-A aplicação, denominada **Deep Flora**, foi estruturada de forma modular, com destaque para:  
-- `__init__.py`: configuração inicial da aplicação;  
-- `routes.py`: gerenciamento das rotas;  
-- `run.py`: execução do servidor.  
-
-O sistema foi projetado para ser facilmente expandido, tanto em termos de modelos preditivos quanto na estrutura de dados e no visual da interface, reforçando seu potencial de aplicação em pesquisa, ensino e extensão.  
-
-Para executar o software localmente, é necessário instalar as bibliotecas utilizadas no desenvolvimento. Recomendo criar um ambiente virtual antes da instalação.  
-No Windows, por exemplo, utilize:  
-`bash
-venv\Scripts\activate`
-`python run.py`
-
 ## Modelo Utilizado
 Para construir o modelo de classificação, foi utilizada a técnica de **Transfer Learning** com base em arquiteturas pré-treinadas, o que possibilitou alcançar melhor performance mesmo com menos dados e menor tempo de treinamento. As arquiteturas selecionadas para essa tarefa foram ResNet-50, EfficientNet-B2, DenseNet-121 e MobileNetV2.  
 
@@ -99,6 +74,31 @@ A figura abaixo ilustra as principais etapas de utilização da aplicação:
 - disponibilização de links externos para aprofundamento do conhecimento sobre a espécie reconhecida (descrições botânicas, imagens complementares e mapas de distribuição geográfica).  
 
 <p align= "center"> <img width="852" height="342" alt="image" src="https://github.com/user-attachments/assets/ad7ab691-e759-487a-9d00-b9fd36583001" /> </p>
+
+### Desenvolvimento do Projeto
+
+O software do projeto pode ser testado em [classifique-render](https://github.com/Hosamuel/classifique-render), onde se encontra disponível de forma pública. O sistema foi desenvolvido em **Flask**, um framework web simples e flexível, que permite ao usuário utilizar a aplicação de maneira intuitiva.  
+
+A interface possibilita carregar uma imagem de planta, realizar o processamento por meio dos modelos previamente treinados e receber como saída as principais informações da espécie reconhecida. A navegação foi organizada para proporcionar uma experiência fluida, desde o envio da imagem até a apresentação dos resultados.  
+
+A infraestrutura do projeto inclui:  
+- **Templates HTML** (uma página inicial e uma de resultados);  
+- **Folhas de estilo CSS** para definição visual;  
+- **Scripts auxiliares** para processamento e análise (em especial o `predict.py`);  
+- **Arquivo JSON (`new_names.json`)**, que associa a cada espécie um identificador único, nomes científicos e populares, além de links para materiais de referência como o Hortodidático da UFSC (HORTODIDÁTICO UFSC, s.d.), Reflora (REFLORA, s.d.) e o Biodiversity4all (BIODIVERSITY4ALL, s.d.).  
+
+A aplicação, denominada **Deep Flora**, foi estruturada de forma modular, com destaque para:  
+- `__init__.py`: configuração inicial da aplicação;  
+- `routes.py`: gerenciamento das rotas;  
+- `run.py`: execução do servidor.  
+
+O sistema foi projetado para ser facilmente expandido, tanto em termos de modelos preditivos quanto na estrutura de dados e no visual da interface, reforçando seu potencial de aplicação em pesquisa, ensino e extensão.  
+
+Para executar o software localmente, é necessário instalar as bibliotecas utilizadas no desenvolvimento. Recomendo criar um ambiente virtual antes da instalação.  
+No Windows, por exemplo, utilize:  
+`bash
+venv\Scripts\activate`
+`python run.py`
 
 ### Potencial de aplicação
 
