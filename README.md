@@ -42,6 +42,31 @@ Todos os modelos gerados neste projeto e os respectivos scripts de treinamento e
 - [Modelos treinados (Google Drive)](https://drive.google.com/file/d/1n7WrpIGYccOEzOGY4OMCl2QL7J44aGbx/view?usp=sharing)  
 - [Scripts de treinamento (GitHub)](https://github.com/Hosamuel/plant-training-scripts) 
 
+## Desenvolvimento do Projeto
+
+O software do projeto pode ser testado em [classifique-render](https://github.com/Hosamuel/classifique-render), onde se encontra disponível de forma pública. O sistema foi desenvolvido em **Flask**, um framework web simples e flexível, que permite ao usuário utilizar a aplicação de maneira intuitiva.  
+
+A interface possibilita carregar uma imagem de planta, realizar o processamento por meio dos modelos previamente treinados e receber como saída as principais informações da espécie reconhecida. A navegação foi organizada para proporcionar uma experiência fluida, desde o envio da imagem até a apresentação dos resultados.  
+
+A infraestrutura do projeto inclui:  
+- **Templates HTML** (uma página inicial e uma de resultados);  
+- **Folhas de estilo CSS** para definição visual;  
+- **Scripts auxiliares** para processamento e análise (em especial o `predict.py`);  
+- **Arquivo JSON (`new_names.json`)**, que associa a cada espécie um identificador único, nomes científicos e populares, além de links para materiais de referência como o Hortodidático da UFSC (HORTODIDÁTICO UFSC, s.d.), Reflora (REFLORA, s.d.) e o Biodiversity4all (BIODIVERSITY4ALL, s.d.).  
+
+A aplicação, denominada **Deep Flora**, foi estruturada de forma modular, com destaque para:  
+- `__init__.py`: configuração inicial da aplicação;  
+- `routes.py`: gerenciamento das rotas;  
+- `run.py`: execução do servidor.  
+
+O sistema foi projetado para ser facilmente expandido, tanto em termos de modelos preditivos quanto na estrutura de dados e no visual da interface, reforçando seu potencial de aplicação em pesquisa, ensino e extensão.  
+
+Para executar o software localmente, é necessário instalar as bibliotecas utilizadas no desenvolvimento. Recomendo criar um ambiente virtual antes da instalação.  
+No Windows, por exemplo, utilize:  
+```bash
+venv\Scripts\activate```
+```python run.py```
+
 ## Desempenho da Aplicação
 
 Apesar dos resultados positivos na análise geral, uma inspeção detalhada das métricas por classe revelou desafios importantes na classificação de espécies morfologicamente semelhantes ou com número reduzido de amostras. As dez classes com os piores desempenhos apresentaram valores de **recall inferiores a 0,40**, indicando dificuldade significativa na identificação automática dessas espécies. Esse resultado evidencia que tanto a escassez de imagens em determinadas classes quanto a elevada similaridade visual entre algumas espécies favoreceram o aumento de falsos negativos, reduzindo o desempenho nessas categorias específicas.  
@@ -67,38 +92,12 @@ O modelo ResNet-50 destacou-se como a arquitetura de melhor desempenho, alcança
 Além dos resultados quantitativos, a pesquisa resultou em entregas tecnológicas de caráter prático e acessível. O principal produto desenvolvido foi uma aplicação web protótipo, denominada **Deep Flora**, que permite a identificação de espécies vegetais a partir do upload de imagens.  
 
 A interface foi projetada para ser simples, responsiva e compatível com diferentes dispositivos e navegadores, possibilitando o uso em campo por pesquisadores, estudantes e cidadãos interessados.  
-
 A figura abaixo ilustra as principais etapas de utilização da aplicação:  
 - envio da imagem;  
 - apresentação da classificação sugerida pelo modelo e dos resultados probabilísticos;  
 - disponibilização de links externos para aprofundamento do conhecimento sobre a espécie reconhecida (descrições botânicas, imagens complementares e mapas de distribuição geográfica).  
 
 <p align= "center"> <img width="852" height="342" alt="image" src="https://github.com/user-attachments/assets/ad7ab691-e759-487a-9d00-b9fd36583001" /> </p>
-
-### Desenvolvimento do Projeto
-
-O software do projeto pode ser testado em [classifique-render](https://github.com/Hosamuel/classifique-render), onde se encontra disponível de forma pública. O sistema foi desenvolvido em **Flask**, um framework web simples e flexível, que permite ao usuário utilizar a aplicação de maneira intuitiva.  
-
-A interface possibilita carregar uma imagem de planta, realizar o processamento por meio dos modelos previamente treinados e receber como saída as principais informações da espécie reconhecida. A navegação foi organizada para proporcionar uma experiência fluida, desde o envio da imagem até a apresentação dos resultados.  
-
-A infraestrutura do projeto inclui:  
-- **Templates HTML** (uma página inicial e uma de resultados);  
-- **Folhas de estilo CSS** para definição visual;  
-- **Scripts auxiliares** para processamento e análise (em especial o `predict.py`);  
-- **Arquivo JSON (`new_names.json`)**, que associa a cada espécie um identificador único, nomes científicos e populares, além de links para materiais de referência como o Hortodidático da UFSC (HORTODIDÁTICO UFSC, s.d.), Reflora (REFLORA, s.d.) e o Biodiversity4all (BIODIVERSITY4ALL, s.d.).  
-
-A aplicação, denominada **Deep Flora**, foi estruturada de forma modular, com destaque para:  
-- `__init__.py`: configuração inicial da aplicação;  
-- `routes.py`: gerenciamento das rotas;  
-- `run.py`: execução do servidor.  
-
-O sistema foi projetado para ser facilmente expandido, tanto em termos de modelos preditivos quanto na estrutura de dados e no visual da interface, reforçando seu potencial de aplicação em pesquisa, ensino e extensão.  
-
-Para executar o software localmente, é necessário instalar as bibliotecas utilizadas no desenvolvimento. Recomendo criar um ambiente virtual antes da instalação.  
-No Windows, por exemplo, utilize:  
-`bash
-venv\Scripts\activate`
-`python run.py`
 
 ### Potencial de aplicação
 
@@ -121,6 +120,19 @@ O Deep Flora reforça como a Inteligência Artificial pode apoiar a conservaçã
 BIODIVERSITY4ALL. Plataforma de ciência cidadã. [s.l.], [s.d.]. Disponível em: 
 https://www.biodiversity4all.org/. Acesso em: 17 ago. 2025.
 
+GLOBAL BIODIVERSITY INFORMATION FACILITY (GBIF). Global Biodiversity 
+Information Facility: free and open access to biodiversity data. [s.l.], [s.d.]. Disponível em: 
+https://www.gbif.org/. Acesso em: 17 ago. 2025. 
+
+HORTODIDÁTICO UFSC. Hortodidático – Plantas Medicinais. Universidade Federal de Santa Catarina, [s.d.]. Disponível em:
+http://hortodidatico.ufsc.br/. Acesso em: 17 ago. 2025.
+
+PEGLER, G. F.; RANIERI, V. E. L. Ciência cidadã em áreas protegidas: boas práticas para 
+formulação e implementação de projetos. Ambiente & Sociedade, v. 27, p. 1–20, 2024. DOI: 
+https://doi.org/10.1590/1809-4422asoc01521vu27L4AO.
+
 PL@NTNET-300K. Pl@ntNet-300K: A plant image dataset with high label ambiguity. Zenodo, 
 2021. DOI: https://doi.org/10.5281/zenodo.5645731. 
 
+REFLORA. Projeto Reflora – Flora do Brasil 2020. Jardim Botânico do Rio de Janeiro, [s.d.]. 
+Disponível em: http://reflora.jbrj.gov.br/. Acesso em: 17 ago. 2025.
