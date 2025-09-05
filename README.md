@@ -1,14 +1,32 @@
-# Plants Image Classification
+# SISTEMA DE RECONHECIMENTO DE IMAGENS DE PLANTAS POR MEIO DE INTELIGÊNCIA ARTIFICIAL
 
-Este projeto tem como objetivo criar um modelo de **classificação de imagens de plantas**. Usando um conjunto de dados extenso e diversificado, o sistema é projetado para reconhecer uma ampla variedade de espécies de plantas, o que pode ser útil em áreas como botânica, agricultura e estudos ambientais.
+O objetivo deste trabalho é desenvolver um software simples e de fácil acesso capaz de identificar espécies de plantas por meio de imagens, utilizando técnicas de Inteligência Artificial (IA), em especial Redes Neurais Convolucionais (CNNs). O sistema foi treinado a partir de bases de dados públicas, como o dataset Pl@ntNet-300K (PL@NTNET, 2021) e a API da Global Biodiversity Information Facility (GBIF, s.d.). Além de auxiliar os usuários na identificação de espécies vegetais, o software busca oferecer uma experiência informativa mais completa, favorecendo a disseminação do conhecimento e contribuindo para o apoio a pesquisas acadêmicas na área de botânica e à biodiversidade.
 
 ## Desenvolvimento do Projeto
-O projeto está em aberto e em fase de aprimoramento. Os resultados iniciais indicam uma evolução significativa a cada atualização realizada. Contudo, novas análises e otimizações serão necessárias para melhorar a **eficiência** do modelo.
-Todo o processo principal, incluindo o **tratamento dos dados**, o **pré-processamento** e o **treinamento do modelo**, foi realizado em um Jupyter Notebook, que está em [main.ipynb](main.ipynb). Esse caderno inclui:
 
-- Análise e organização do conjunto de dados.
-- Implementação do modelo de Transfer Learning.
-- Ajustes de hiperparâmetros e avaliação de desempenho.
+O software do projeto pode ser testado em [classifique-render](https://github.com/Hosamuel/classifique-render), onde se encontra disponível de forma pública. O sistema foi desenvolvido em **Flask**, um framework web simples e flexível, que permite ao usuário utilizar a aplicação de maneira intuitiva.  
+
+A interface possibilita carregar uma imagem de planta, realizar o processamento por meio dos modelos previamente treinados e receber como saída as principais informações da espécie reconhecida. A navegação foi organizada para proporcionar uma experiência fluida, desde o envio da imagem até a apresentação dos resultados.  
+
+A infraestrutura do projeto inclui:  
+- **Templates HTML** (uma página inicial e uma de resultados);  
+- **Folhas de estilo CSS** para definição visual;  
+- **Scripts auxiliares** para processamento e análise (em especial o `predict.py`);  
+- **Arquivo JSON (`new_names.json`)**, que associa a cada espécie um identificador único, nomes científicos e populares, além de links para materiais de referência como o Hortodidático da UFSC (HORTODIDÁTICO UFSC, s.d.), Reflora (REFLORA, s.d.) e o Biodiversity4all (BIODIVERSITY4ALL, s.d.).  
+
+A aplicação, denominada **Deep Flora**, foi estruturada de forma modular, com destaque para:  
+- `__init__.py`: configuração inicial da aplicação;  
+- `routes.py`: gerenciamento das rotas;  
+- `run.py`: execução do servidor.  
+
+O sistema foi projetado para ser facilmente expandido, tanto em termos de modelos preditivos quanto na estrutura de dados e no visual da interface, reforçando seu potencial de aplicação em pesquisa, ensino e extensão.  
+
+Para executar o software localmente, é necessário instalar as bibliotecas utilizadas no desenvolvimento. Recomenda-se criar um **ambiente virtual** antes da instalação.  
+No Windows, por exemplo, utilize:  
+```bash
+venv\Scripts\activate
+python run.py
+
 
 ## Modelo Utilizado
 Para construir o modelo de classificação, foi utilizada a técnica de **Transfer Learning** com base em uma arquitetura pré-treinada, permitindo uma melhor performance mesmo com menos dados e menos tempo de treinamento. A arquitetura escolhida foi:
