@@ -24,7 +24,7 @@ A distribuição das imagens pode ser verificada na figura abaixo, sendo a quant
 ## Informações das Plantas
 O arquivo JSON com as informações das espécies de plantas está disponível para referência e consulta. Ele contém os nomes científicos e os identificadores utilizados no modelo.
 
-- [Nomes das Plantas - plant_names.json](new_names.json).
+- [Nomes das Plantas - plant_names.json]([new_names.json](https://github.com/Hosamuel/Plants-Image-Classification-/blob/main/new_names.json)).
 ## Desenvolvimento do Projeto
 
 O software do projeto pode ser testado em [classifique-render](https://github.com/Hosamuel/classifique-render), onde se encontra disponível de forma pública. O sistema foi desenvolvido em **Flask**, um framework web simples e flexível, que permite ao usuário utilizar a aplicação de maneira intuitiva.  
@@ -62,6 +62,10 @@ Essa diferença evidencia um equilíbrio importante entre desempenho e eficiênc
 
 Esses resultados confirmam o potencial das arquiteturas empregadas, que mantiveram elevado grau de acerto mesmo diante da diversidade morfológica e da complexidade taxonômica do conjunto de dados. A ResNet-50, no entanto, apresentou uma vantagem consistente sobre as demais, sendo selecionada como **modelo final** em função de sua superioridade nos indicadores globais.
 
+Todos os modelos gerados neste projeto e os respectivos scripts de treinamento estão disponíveis nos links abaixo:  
+- [Modelos treinados (Google Drive)](https://drive.google.com/file/d/1n7WrpIGYccOEzOGY4OMCl2QL7J44aGbx/view?usp=sharing)  
+- [Scripts de treinamento (GitHub)](https://github.com/Hosamuel/plant-training-scripts) 
+
 ## Desempenho da Aplicação
 
 Apesar dos resultados positivos na análise geral, uma inspeção detalhada das métricas por classe revelou desafios importantes na classificação de espécies morfologicamente semelhantes ou com número reduzido de amostras. As dez classes com os piores desempenhos apresentaram valores de **recall inferiores a 0,40**, indicando dificuldade significativa na identificação automática dessas espécies. Esse resultado evidencia que tanto a escassez de imagens em determinadas classes quanto a elevada similaridade visual entre algumas espécies favoreceram o aumento de falsos negativos, reduzindo o desempenho nessas categorias específicas.  
@@ -77,10 +81,45 @@ Parte desses erros pode estar relacionada à qualidade, variedade e padronizaç�
 
 ## Resultados
 
+A avaliação quantitativa dos modelos ResNet-50, EfficientNet-B2, DenseNet-121 e MobileNetV2 evidenciou desempenhos distintos na tarefa de classificação de espécies vegetais, conforme sintetizado na tabela abaixo.  
+<img width="601" height="152" alt="image" src="https://github.com/user-attachments/assets/f3c82890-13d3-4b82-93f3-1e89443be8ea" />
+
+O modelo ResNet-50 destacou-se como a arquitetura de melhor desempenho, alcançando valores ponderados (*weighted average*) de precisão = 0,85, recall = 0,84 e F1-score = 0,84. A EfficientNet-B2 apresentou métricas globais próximas, com precisão = 0,81, recall = 0,80 e F1-score = 0,80, confirmando sua competitividade, embora com leve perda em relação à ResNet-50.  
+
+### Aplicação desenvolvida
+
+Além dos resultados quantitativos, a pesquisa resultou em entregas tecnológicas de caráter prático e acessível. O principal produto desenvolvido foi uma aplicação web protótipo, denominada **Deep Flora**, que permite a identificação de espécies vegetais a partir do upload de imagens.  
+
+A interface foi projetada para ser simples, responsiva e compatível com diferentes dispositivos e navegadores, possibilitando o uso em campo por pesquisadores, estudantes e cidadãos interessados.  
+
+A figura abaixo ilustra as principais etapas de utilização da aplicação:  
+- envio da imagem;  
+- apresentação da classificação sugerida pelo modelo e dos resultados probabilísticos;  
+- disponibilização de links externos para aprofundamento do conhecimento sobre a espécie reconhecida (descrições botânicas, imagens complementares e mapas de distribuição geográfica).  
+
+<img width="852" height="342" alt="image" src="https://github.com/user-attachments/assets/ad7ab691-e759-487a-9d00-b9fd36583001" />
+
+### Potencial de aplicação
+
+O sistema foi concebido para aplicações práticas de baixo custo, podendo ser explorado em atividades educativas, em projetos de monitoramento da biodiversidade e como apoio em iniciativas de agricultura sustentável.  
+
+A simplicidade da interface garante acessibilidade a diferentes perfis de usuários, enquanto os links externos asseguram maior confiabilidade das informações fornecidas.
+
+## Conclusão
+
+O projeto **Deep Flora** mostrou que é possível utilizar técnicas de *Deep Learning* para a identificação de plantas a partir de imagens, alcançando bons resultados mesmo com a alta diversidade morfológica e a complexidade taxonômica do conjunto de dados. Entre os modelos testados, a ResNet-50 foi a que apresentou melhor desempenho, com precisão, recall e F1-score em torno de 0,85, sendo definida como o modelo final da aplicação.  
+
+Além dos testes e métricas, o trabalho resultou na criação de uma aplicação web protótipo, capaz de classificar automaticamente 487 espécies vegetais e apresentar informações adicionais, como nome científico, nome popular e links de referência. Essa ferramenta foi pensada para ser simples, responsiva e acessível, podendo ser usada em diferentes cenários, como apoio ao ensino, monitoramento da biodiversidade, agricultura sustentável e práticas de ciência cidadã.  
+
+Mesmo com as limitações encontradas como a dificuldade em espécies com poucas imagens ou morfologicamente muito semelhantes, os resultados confirmam a eficiência da abordagem e abrem espaço para melhorias futuras, como ampliar o dataset, refinar os modelos e adaptar a aplicação para versões móveis.  
+
+O Deep Flora reforça como a Inteligência Artificial pode apoiar a conservação da biodiversidade e tornar o conhecimento botânico mais acessível para pesquisadores, estudantes e para o público em geral.
+
 ## Referêcia
 
-O conjunto de dados ultizados nesse projeto é o Pl@ntNet-300K e pode ser acessado no repositório Zenodo.
+BIODIVERSITY4ALL. Plataforma de ciência cidadã. [s.l.], [s.d.]. Disponível em: 
+https://www.biodiversity4all.org/. Acesso em: 17 ago. 2025.
 
-**Referência**: Garcin, C., Joly, A., Bonnet, P., Servajean, M., & Salmon, J. (2021). 
-Pl@ntNet-300K image dataset (1.0) [Data set]. Zenodo. 
-https://doi.org/10.5281/zenodo.4726653.
+PL@NTNET-300K. Pl@ntNet-300K: A plant image dataset with high label ambiguity. Zenodo, 
+2021. DOI: https://doi.org/10.5281/zenodo.5645731. 
+
